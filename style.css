@@ -9,7 +9,7 @@ body {
 }
 
 html {
-  background-color: #000;
+  background-color: #000000;
 }
 
 body {
@@ -331,3 +331,60 @@ body {
   transition-timing-function: ease-out;
   transition-duration: 0.4s;
 }
+.rainbow-text {
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet
+  );
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 4s linear infinite;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
+
+.fireworks-text {
+  position: relative;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/* Spark particles */
+.spark {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: spark-burst 900ms ease-out forwards;
+}
+
+@keyframes spark-burst {
+  from {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translate(var(--x), var(--y)) scale(0);
+    opacity: 0;
+  }
+}
+
+
+
+
