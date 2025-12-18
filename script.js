@@ -2329,3 +2329,35 @@ if (IS_HEADER) {
     });
   }, 0);
 }
+
+const subheader = document.querySelector(".fireworks-text");
+
+function createSpark(x, y) {
+  const spark = document.createElement("span");
+  spark.className = "spark";
+  document.body.appendChild(spark);
+
+  spark.style.left = x + "px";
+  spark.style.top = y + "px";
+
+  const angle = Math.random() * Math.PI * 2;
+  const distance = Math.random() * 50 + 20;
+
+  spark.style.setProperty("--x", Math.cos(angle) * distance + "px");
+  spark.style.setProperty("--y", Math.sin(angle) * distance + "px");
+
+  setTimeout(() => spark.remove(), 900);
+}
+
+function fireContinuously() {
+  const rect = subheader.getBoundingClientRect();
+  for (let i = 0; i < 6; i++) {
+    createSpark(
+      rect.left + rect.width / 2,
+      rect.top + rect.height / 2
+    );
+  }
+}
+
+// Fire sparks every 800ms
+setInterval(fireContinuously, 800);
