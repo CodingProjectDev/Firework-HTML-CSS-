@@ -357,34 +357,3 @@ body {
   }
 }
 
-.fireworks-text {
-  position: relative;
-  font-weight: 500;
-  color: #ffffff;
-}
-
-/* Spark particles */
-.spark {
-  position: fixed;
-  width: 4px;
-  height: 4px;
-  background: white;
-  border-radius: 50%;
-  pointer-events: none;
-  animation: spark-burst 900ms ease-out forwards;
-}
-
-@keyframes spark-burst {
-  from {
-    transform: translate(0, 0) scale(1);
-    opacity: 1;
-  }
-  to {
-    transform: translate(var(--x), var(--y)) scale(0);
-    opacity: 0;
-  }
-}
-
-
-
-
